@@ -33,14 +33,14 @@ function loco() {
 }
 loco()
 
-function page1Animation(){
-    gsap.to("video", {
+function page1Animation() {
+    gsap.to("#page1 video", {
         filter: "blur(20px)",
         transform: "scaleX(0.85)",
         scrollTrigger: {
             trigger: "#page1",
             scroller: "#main",
-            markers: true,
+            // markers: true,
             start: "top 0",
             end: "top -50%",
             scrub: true
@@ -52,6 +52,33 @@ function page1Animation(){
             top: dets.y,
             left: dets.x,
             duration: 1
+        })
+    })
+
+    document.querySelector("#nav i").addEventListener("mouseenter", function () {
+        gsap.to("#cursor", {
+            scale: 2,
+            backgroundColor: "black",
+            mixBlendMode: "darken"
+        })
+        gsap.to("#nav i", {
+            color: "white"
+        })
+        gsap.to("#nav", {
+            mixBlendMode: "normal"
+        })
+    })
+    document.querySelector("#nav i").addEventListener("mouseleave", function () {
+        gsap.to("#cursor", {
+            scale: 1,
+            backgroundColor: "white",
+            mixBlendMode: "difference"
+        })
+        gsap.to("#nav i", {
+            color: "white"
+        })
+        gsap.to("#nav", {
+            mixBlendMode: "difference"
         })
     })
 }
@@ -89,9 +116,60 @@ navAnimation()
 
 
 
-gsap.to("#page2 img",{
-    transform:"translateY(-50%) translateX(69%)",
-    duration:10,
-    repeat:-1,
-    ease:"none"
+gsap.to("#page2 img", {
+    transform: "translateY(-50%) translateX(69%)",
+    duration: 10,
+    repeat: -1,
+    ease: "none"
 })
+
+function page3Animation() {
+
+
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page3-content-1 h2",
+            scroller: "#main",
+            start: "top 50%",
+            end: "top -10%",
+            scrub: 2
+        }
+    })
+
+    tl2.from("#page3-content-1 h2", {
+        y: 50,
+        scale: 1.15,
+        opacity: 0,
+        duration: 0.8
+    })
+    tl2.from("#page3-content-1 p", {
+        y: 50,
+        scale: 1.15,
+        opacity: 0,
+        duration: 0.8
+
+    })
+    tl2.from("#page3-content-1 button", {
+        y: 50,
+        scale: 1.15,
+        opacity: 0,
+        duration: 0.8
+
+    })
+    tl2.from("#page3-content-2 h5", {
+        y: 50,
+        scale: 1.15,
+        opacity: 0,
+        duration: 0.8
+
+    })
+    tl2.from("#page3-content-2 video", {
+        y: 50,
+        scale: 1.15,
+        opacity: 0,
+        duration: 0.8
+
+    })
+}
+
+page3Animation()

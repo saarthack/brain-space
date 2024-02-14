@@ -1,33 +1,43 @@
+@font-face {
+    font-family: archi;
+    src: url(./archia-light-webfont.woff);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:gilroy;
+    font-family: gilroy;
 }
+
 html,
 body {
     height: 100%;
     width: 100%;
 }
 
-#cursor{
+#cursor {
     height: 20px;
     width: 20px;
     border-radius: 50%;
     position: fixed;
-    z-index: 999;
+    z-index: 99;
     background-color: #fff;
     mix-blend-mode: difference;
 }
 
-#page1{
+body {
+    cursor: none;
+}
+
+#page1 {
     height: 100vh;
     /* background-color: rgb(62, 62, 62); */
     width: 100%;
     position: relative;
 }
 
-#nav{
+#nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,27 +45,31 @@ body {
     position: fixed;
     width: 100%;
     mix-blend-mode: difference;
-    z-index: 9;
+    z-index: 9999;
 }
-#nav-part2{
+
+#nav-part2 {
     display: flex;
     align-items: center;
     gap: 3.5vw;
 }
 
-#nav h4{
+#nav h4 {
     font-size: 0.9vw;
     text-transform: uppercase;
     color: #fff;
 }
 
-#nav i{
+#nav i {
     font-size: 1.5vw;
     color: #fff;
     display: none;
+    position: relative;
+    z-index: 9999;
+
 }
 
-video{
+#page1 video {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -67,7 +81,7 @@ video{
 }
 
 
-#page2{
+#page2 {
     height: 100vh;
     width: 100%;
     /* background-color: #fff; */
@@ -76,17 +90,17 @@ video{
 
 }
 
-#page2 h2{
+#page2 h2 {
     font-size: 1.5vw;
     letter-spacing: 2px;
     word-spacing: 5px;
-    
+
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
 }
 
-#page2-content{
+#page2-content {
     /* background-color: red; */
     display: flex;
     margin-top: 5vw;
@@ -95,16 +109,17 @@ video{
 
 }
 
-#left-page2{
+#left-page2 {
     height: 400px;
     width: 42%;
     background-color: rgb(237, 237, 237);
-    border-radius: 10px;   
+    border-radius: 10px;
     position: relative;
     overflow: hidden;
 
 }
-#blur{
+
+#blur {
     height: 100%;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.325);
@@ -113,36 +128,148 @@ video{
     z-index: 9;
 }
 
-#left-page2 img{
+#left-page2 img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
 }
-#right-page2{
+
+#right-page2 {
     height: 400px;
-    width:45%;
+    width: 45%;
     /* background-color: blue; */
 }
 
-#right-page2 h1{
+#right-page2 h1 {
     font-size: 3vw;
     font-weight: 500;
 }
 
-#right-page2 p{
+#right-page2 p {
     font-size: 1.3vw;
     font-weight: 300;
     margin: 2vw 0;
 }
 
 
-#right-page2 button{
+#right-page2 button {
     font-size: 1.1vw;
     font-weight: 500;
     padding: 14px 30px;
     border-radius: 50px;
     border: 2px solid #000;
     background-color: transparent;
+
+}
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    background-image: url(./bg.png);
+    background-size: cover;
+    background-position: top;
+    padding-bottom: 30vw;
+}
+
+#page3 #page3-top {
+    width: 100%;
+    height: 100px;
+}
+
+#helmet {
+    /* background-color: blue; */
+    width: 100%;
+}
+
+#page3-content-1 {
+    width: 100%;
+    padding: 5vw 0;
+
+    text-align: center;
+}
+
+#page3-content-1 h2 {
+    font-size: 3vw;
+    font-family: archi;
+    font-weight: 100;
+
+}
+
+#page3-content-1 p {
+    font-size: 1.5vw;
+    margin: 2vw 0;
+    font-family: archi;
+    font-weight: 100;
+
+}
+
+#page3-content-1 button {
+    padding: 1vw 2vw;
+    border-radius: 50px;
+    border: 2px solid #000;
+    background-color: transparent;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+
+#page3 #page3-content-2 {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    margin-top: 10vw;
+    padding: 2vw 7vw;
+    position: relative;
+}
+
+#page3-content-2 video {
+    height: 100%;
+    /* width: 40%; */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#page3-content-2 h5{
+    font-size: 2vw;
+    width: 50%;
+    font-family: archi;
+
+}
+
+#page4{
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://www.brain.space/wp-content/themes/brain.space/assets/bg/home/ecosystem_bg.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 4vw 5vw;
+    justify-content: flex-start;
+}
+
+#page4-info{
+    width: 30vw;
+    height: 100%;
+    background-color: red;
+}
+.page4-elems{
+    height: 100%;
+    width: 30vw;
+    -webkit-mask-image: url(https://www.brain.space/wp-content/themes/brain.space/assets/bg/home/ecosystem-box_bg.svg);
+    backdrop-filter: blur(40px);
+     -webkit-mask-origin: bottom;
+
+}
+.page4-elems img{
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+    backdrop-filter: blur(10px);
+    background-color: #ffffff50;
 
 }
