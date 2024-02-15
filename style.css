@@ -27,7 +27,11 @@ body {
 }
 
 body {
-    cursor: none;
+    /* cursor: none; */
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 #page1 {
@@ -170,7 +174,7 @@ body {
     background-image: url(./bg.png);
     background-size: cover;
     background-position: top;
-    padding-bottom: 30vw;
+    padding-bottom: 10vw;
 }
 
 #page3 #page3-top {
@@ -246,30 +250,86 @@ body {
     width: 100%;
     background-image: url(https://www.brain.space/wp-content/themes/brain.space/assets/bg/home/ecosystem_bg.jpg);
     background-size: cover;
+}
+#page4-content{
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    padding: 4vw 5vw;
+    padding: 8vw 5vw;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+
+}
+#page4-info{
+    flex-shrink: 0;
+    width: 30vw;
+    height: 100%;
+    /* background-color: red; */
+    color: #fff;
+}
+#page4-info h2{
+    font-family: archi;
+    font-size: 3vw;
+    margin-bottom: 10px;
+}
+#page4-info button{
+    
+    font-size: 1vw;
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    border-radius: 50px;
+    border: 2px solid #000;
+    background-color: transparent;
+    font-weight: 600;
 }
 
-#page4-info{
-    width: 30vw;
-    height: 100%;
-    background-color: red;
-}
 .page4-elems{
+    flex-shrink: 0;
     height: 100%;
     width: 30vw;
-    -webkit-mask-image: url(https://www.brain.space/wp-content/themes/brain.space/assets/bg/home/ecosystem-box_bg.svg);
-    backdrop-filter: blur(40px);
-     -webkit-mask-origin: bottom;
+    background-color: rgba(255, 255, 255, 0.182);
+    -webkit-mask-image: url(https://www.brain.space/wp-content/themes/brain.space/assets/bg/home/ecosystem-box_bg_mob.svg);
+    -webkit-mask-size: cover;
+    -webkit-mask-position: bottom;
+    -webkit-mask-repeat: no-repeat;
+    backdrop-filter: blur(20px);
+    padding: 2vw;
+    margin: 0 3vw;
 
 }
 .page4-elems img{
-    height: 100%;
     width: 100%;
-    /* object-fit: cover; */
-    backdrop-filter: blur(10px);
-    background-color: #ffffff50;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1vw;
+}
 
+.page4-elems h2{
+    font-family: archi;
+    font-size: 3vw;
+    font-weight: 100;
+}
+
+#page4 #slider{
+    height: 5px;
+    width: 59%;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    background-color: rgb(255, 255, 255);
+    transform: translate(-50%,0);
+    overflow: hidden;
+}
+#page4 #slider-in{
+    height: 100%;
+    width: 17vw;
+    background-color: black;
+}
+
+#page5{
+    height: 100vh;
+    width: 100%;
 }

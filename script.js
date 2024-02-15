@@ -173,3 +173,22 @@ function page3Animation() {
 }
 
 page3Animation()
+
+
+
+var tl4 = gsap.timeline({
+    scrollTrigger:{
+        trigger:"#page4",
+        scroller:"#main",
+        start:"top 0",
+        end:"top -70%",
+        scrub:3,
+        pin:true
+    }
+})
+tl4.to("#page4-content",{
+    transform:"translateX(-50%)",
+},"okay")
+tl4.to("#page4 #slider-in",{
+    x:650,
+},"okay")
