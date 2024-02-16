@@ -115,15 +115,15 @@ function navAnimation() {
 navAnimation()
 
 
-
-gsap.to("#page2 img", {
-    transform: "translateY(-50%) translateX(69%)",
-    duration: 10,
-    repeat: -1,
-    ease: "none"
-})
-
 function page3Animation() {
+
+    gsap.to("#page2 img", {
+        transform: "translateY(-50%) translateX(69%)",
+        duration: 10,
+        repeat: -1,
+        ease: "none"
+    })
+    
 
 
     var tl2 = gsap.timeline({
@@ -175,20 +175,50 @@ function page3Animation() {
 page3Animation()
 
 
+function page4page5Animation() {
 
-var tl4 = gsap.timeline({
-    scrollTrigger:{
-        trigger:"#page4",
-        scroller:"#main",
-        start:"top 0",
-        end:"top -70%",
-        scrub:3,
-        pin:true
-    }
+    var tl4 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#page4",
+            scroller: "#main",
+            start: "top 0",
+            end: "top -70%",
+            scrub: 3,
+            pin: true
+        }
+    })
+    tl4.to("#page4-content", {
+        transform: "translateX(-50%)",
+    }, "okay")
+    tl4.to("#page4 #slider-in", {
+        x: 650,
+    }, "okay")
+
+
+    document.querySelector("#page5").addEventListener("mousemove", function (dets) {
+        document.querySelector("#page5").style.background = `conic-gradient(at ${dets.x}px ${dets.y}px,rgb(255, 228, 233),aliceblue,rgb(205, 243, 255),rgb(195, 255, 195),lightyellow,rgb(251, 226, 230))`
+    })
+}
+
+page4page5Animation()
+
+
+
+var text = "We are brain.space     The brain data company"
+
+
+var splittedText = text.split("")
+
+var clutter = ""
+
+splittedText.forEach(function(elem){
+    clutter += `<span>${elem}</span>`
 })
-tl4.to("#page4-content",{
-    transform:"translateX(-50%)",
-},"okay")
-tl4.to("#page4 #slider-in",{
-    x:650,
-},"okay")
+
+var h1Text = document.querySelector("#page1 h1")
+h1Text.innerHTML = clutter
+
+gsap.to("#page1 h1 span",{
+    display:"initial",
+    stagger:0.1
+})

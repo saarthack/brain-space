@@ -26,8 +26,9 @@ body {
     mix-blend-mode: difference;
 }
 
-body {
+#main {
     /* cursor: none; */
+    background-color: #fff;
 }
 
 body::-webkit-scrollbar{
@@ -39,6 +40,36 @@ body::-webkit-scrollbar{
     /* background-color: rgb(62, 62, 62); */
     width: 100%;
     position: relative;
+}
+#page1 h1{
+    font-family: archi;
+
+    position: absolute;
+    bottom: 20%;
+    font-weight: 100;
+    z-index: 9;
+    left: 10%;
+    font-size: 4vw;
+    color: #fff;
+    /* background-color: blue; */
+    width: 50%;
+}
+#page1 h1::after{
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 50px;
+    animation: kuch 0.3s infinite linear;
+    background-color: #fff;
+}
+#page1 h1 span{
+    display: none;
+    font-family: archi;
+}
+@keyframes kuch {
+    100%{
+        opacity: 0;
+    }
 }
 
 #nav {
@@ -332,4 +363,15 @@ body::-webkit-scrollbar{
 #page5{
     height: 100vh;
     width: 100%;
+    background: conic-gradient(at 0 0,rgb(255, 228, 233),aliceblue,rgb(205, 243, 255),rgb(195, 255, 195),lightyellow,rgb(251, 226, 230));
+    padding: 4vw;
+}
+
+
+#page5-in{
+    height: 100%;
+    width: 100%;
+    background-color: #c4c4c459;
+    border-radius: 30px;
+    backdrop-filter: blur(50px);
 }
